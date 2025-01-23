@@ -48,30 +48,34 @@ This is about a 5 day Workshop conducted by VLSI System Design on SOC Design/ Ph
 ### ASIC Design FLOW
 ![screenshot 1](https://github.com/user-attachments/assets/07e1fe8b-de49-4ebd-bfaa-ed509f22fd7f)
 
+### openLANE Workflow
+
+![Screenshot 2](https://github.com/user-attachments/assets/ef1edc95-d62e-4377-9600-d9679443c9d7)
+
 ### Tasks:
 - Run 'picorv32a' design synthesis using OpenLANE flow and generate necessary outputs.
 - Calculate the Flop ratio and the percentage of D-FFs.
 
 ### Introduction to openLANE workflow using linux commands in VDI:
-'''
-# change the directory to OpenLANE flow directory
+```
+#### change the directory to OpenLANE flow directory
 cd Desktop/work/tools/openlane_woking_dir/openlane
 
-# To run the OpenLANE docker sub-system
+#### To run the OpenLANE docker sub-system
 docker
 
-# Invoking the OpenLANE flow in the interactive mode
+#### Invoking the OpenLANE flow in the interactive mode
 ./flow.tcl -interactive
 
-# Required package
+#### Required package
 package require openlane 0.9
 
-# To prep the design for running the specific 'picorv32a' design
+#### To prep the design for running the specific 'picorv32a' design
 prep -design picorv32a
 
-# To run synthesis
+#### To run synthesis
 run_synthesis
-'''
+```
 ### Screenshots of running these commands:
 
 ![Screenshot 2024-09-20 142436](https://github.com/user-attachments/assets/6e22a783-0779-4658-88a0-d250d878e198)
