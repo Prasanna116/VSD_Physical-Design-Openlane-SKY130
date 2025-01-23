@@ -3,8 +3,8 @@ This is about a 5 day Workshop conducted by VLSI System Design on SOC Design/ Ph
 
 # Workshop Contents
  - DAY 1: Inception of Open-source EDA, OpenLane and Sky130 PDK
+   - Introduction
    - ASIC design Flow
-   - OpenLane Directory Hierarchy
    - Lab [Day 1] - Determine Flip-flop Ratio
    
  - DAY 2: Good Floorplan vs Bad Floorplan and Introduction to Library Cells
@@ -49,10 +49,10 @@ This is about a 5 day Workshop conducted by VLSI System Design on SOC Design/ Ph
 ![screenshot 1](https://github.com/user-attachments/assets/07e1fe8b-de49-4ebd-bfaa-ed509f22fd7f)
 
 ### Tasks:
--Run 'picorv32a' design synthesis using OpenLANE flow and generate necessary outputs.
--Calculate the Flop ratio and the percentage of D-FFs.
+- Run 'picorv32a' design synthesis using OpenLANE flow and generate necessary outputs.
+- Calculate the Flop ratio and the percentage of D-FFs.
 
-###Introduction to openLANE workflow using linux commands in VDI:
+### Introduction to openLANE workflow using linux commands in VDI:
 '''
 # change the directory to OpenLANE flow directory
 cd Desktop/work/tools/openlane_woking_dir/openlane
