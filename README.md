@@ -2,7 +2,6 @@
 This is about a 5 day Workshop conducted by VLSI System Design on SOC Design/ Physical Design using Open-Source tools. The entire workflow was carried out in OpenLANE,  an automated RTL to GDSII flow based on several components . The PDK's used here is SKYWATER 130nm, which is an open source Process Design Kit.
 
 # Workshop Contents
-# Table of Contents  
  - [DAY 1: Inception of Open-source EDA, OpenLane and Sky130 PDK]
    - [ASIC design Flow]
    - [What is Openlane?]
@@ -39,3 +38,8 @@ This is about a 5 day Workshop conducted by VLSI System Design on SOC Design/ Ph
    - [Routing Stage and TritonRoute]
    - [Lab [Day 5] - Power Distribution Network (PDN) and routing]
    - [SPEF Extraction and GDSII Streaming]
+
+### ** DAY-1 Day 1 - Inception of open-source EDA, OpenLANE and Sky130 PDK ** 
+
+-
+
