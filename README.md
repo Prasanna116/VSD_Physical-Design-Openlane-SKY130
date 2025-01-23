@@ -41,12 +41,14 @@ This is about a 5 day Workshop conducted by VLSI System Design on SOC Design/ Ph
 ### ** DAY-1 - Inception of open-source EDA, OpenLANE and Sky130 PDK ** 
 ### Theory:
 - The Day 1 is all about introduction to the interaction between the software and hardware component of a computer. We came across the use of Open Source EDA tools and about the OpenLANE workflow.
--  Open Source Digital ASIC Design requires three open-source components:  
+ 
+#### Open Source Digital ASIC Design requires three open-source components:  
 - **RTL Designs** = github.com, librecores.org, opencores.org
 - **EDA Tools** = OpenROAD, OpenLANE,QFlow  
 - **PDK** = Google + Skywater 130nm Production PDK
+  
 ### ASIC Design FLOW
-![screenshot 1](https://github.com/user-attachments/assets/07e1fe8b-de49-4ebd-bfaa-ed509f22fd7f)
+![image](https://github.com/user-attachments/assets/112fe9c3-81e2-4cdd-9386-987b76e69067)
 
 ### openLANE Workflow
 
@@ -107,4 +109,18 @@ run_synthesis
 ![Screenshot 2024-09-20 145351](https://github.com/user-attachments/assets/8dc3eca7-b648-410b-b75e-834c8ae46409)
 
 
-
+### ** DAY-2 Good Floorplan vs Bad Floorplan and Introduction to Library Cells **
+### Theory:
+#### FloorPlan Stage:
+- Core and Die Area
+- Utilization and Aspect Ratio
+- Pre-Placed Cells
+- Use of Decoupling Capacitors
+- Power Planning Stages and neccessity
+- Pin Placement
+  
+#### Placement Stage:
+-  Binding the Netlist with Physical Equivalents
+-  Netlist Placement
+-  Placement Optimization
+-  Optimization using Repeaters-Buffers.
