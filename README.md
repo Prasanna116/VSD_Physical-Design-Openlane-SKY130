@@ -39,7 +39,14 @@ This is about a 5 day Workshop conducted by VLSI System Design on SOC Design/ Ph
    - [Lab [Day 5] - Power Distribution Network (PDN) and routing]
    - [SPEF Extraction and GDSII Streaming]
 
-### ** DAY-1 Day 1 - Inception of open-source EDA, OpenLANE and Sky130 PDK ** 
+### ** DAY-1 - Inception of open-source EDA, OpenLANE and Sky130 PDK ** 
 
--
+- The Day 1 is all about introduction to the interaction between the software and hardware component of a computer. We came across the use of Open Source EDA tools and about the OpenLANE workflow.
+-  Open Source Digital ASIC Design requires three open-source components:  
+- **RTL Designs** = github.com, librecores.org, opencores.org
+- **EDA Tools** = OpenROAD, OpenLANE,QFlow  
+- **PDK** = Google + Skywater 130nm Production PDK
+### ASIC Design FLOW
+![screenshot1] (https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.einfochips.com%2Fblog%2Fasic-design-flow-in-vlsi-engineering-services-a-quick-guide%2F&psig=AOvVaw0wfd_tSpGxdA5zhbFbJhGC&ust=1737689844122000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCIDtiKD1iosDFQAAAAAdAAAAABAE)
+
 
