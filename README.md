@@ -30,7 +30,7 @@ This is about a 5 day Workshop conducted by VLSI System Design on SOC Design/ Ph
    - Setup Timing Analysis
    - Timing Analysis with Real Clocks
    - Multi-corner STA for Post-CTS
-   -     
+       
  - DAY 5: Final Steps for RTL2GDS using TritonRoute and OpenSTA
    - Maze Routing - Lee's Algorithm
    - DRC Cleaning
@@ -50,7 +50,7 @@ This is about a 5 day Workshop conducted by VLSI System Design on SOC Design/ Ph
 ### ASIC Design FLOW
 ![image](https://github.com/user-attachments/assets/112fe9c3-81e2-4cdd-9386-987b76e69067)
 
-### openLANE Workflow
+### OpenLane Workflow
 
 ![Screenshot 2](https://github.com/user-attachments/assets/ef1edc95-d62e-4377-9600-d9679443c9d7)
 
@@ -124,41 +124,20 @@ run_synthesis
 -  Netlist Placement
 -  Placement Optimization
 -  Optimization using Repeaters-Buffers.
-## Implementation:
 
 ### Task 2:
-### 1. Run picorv32a design floorplan using OpenLANE flow and generate necessary outputs.
-### 2. calculate the die area in microns from the height and width value from floorplan def.
-### 3. load generated floorplan def in magic tool and explore the floorplan.
-### 4. Run picorv32a design congestion aware placement using OpenLANE flow and generate necessary outputs.
-### 5. load generated placement def and view the placement of standard cell in the core area.
-###### area of die in micron = die width in microns * die height in microns
+1. Run picorv32a design floorplan using OpenLANE flow and generate necessary outputs.
+2. Calculate the die area in microns from the height and width value from floorplan def.
+3. Load generated floorplan def in magic tool and explore the floorplan.
+4. Run picorv32a design congestion aware placement using OpenLANE flow and generate necessary outputs.
+5. load generated placement def and view the placement of standard cell in the core area.
 
-### 1. Run picorv32a design floorplan using OpenLANE flow and generate necessary outputs.
+#### Area of die in micron = die width in microns * die height in microns
 
-#### Commands used to invoke the OpenLANE flow and to run floorplan are:
-
-#### Open the directory where the OpenLANE exists
-###### cd Desktop/work/tools/openlane_working_dir/openlane
-
-#### Invoke the OpenLANE flow docker sub-system by running below command
-###### docker
-
-#### Invoke the OpenLANE flow in the interactive mode using the below command
-###### ./flow.tcl -interactive
-
-#### Feed the required packages for the proper functionality of the OpenLANE flow
-###### package require openlane 0.9
-
-#### OpenLANE flow is ready to run any design and have to prep the design creating some necessary files and directories for running a specific design which in our case is 'picorv32a'
-###### prep -design picorv32a
-
-#### Design is prepped and ready, run the synthesis using the command below
-###### run_synthesis
-
-#### run the floorplan
-###### run_floorplan
-
+#### Run the floorplan:
+```
+ run_floorplan
+```
 ### Screenshot of Floorplan run
 ![Screenshot 2024-09-21 154903](https://github.com/user-attachments/assets/d5ee279d-7884-4d90-9fe4-3cbdce97e678)
 
@@ -190,13 +169,13 @@ run_synthesis
 ### 3. Load generated floorplan def in magic tool and explore the floorplan.
 
 ### Commands used to load floorplan def into magic tool is:
+```
+Open the directory where the floorplan def exists
+cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/21-09_08-45/results/floorplan/
 
-#### Open the directory where the floorplan def exists
-###### cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/21-09_08-45/results/floorplan/
-
-#### Command to load the def file into magic tool
-###### magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
-
+Command to load the def file into magic tool
+magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
+```
 ### Screenshot of command
 ![Screenshot 2024-09-21 161053](https://github.com/user-attachments/assets/04c66067-8a63-4715-87ab-ed038b8fef2e)
 
@@ -220,25 +199,24 @@ run_synthesis
 ### Screenshot of placement run 
 ![Screenshot 2024-09-21 183125](https://github.com/user-attachments/assets/9c02fa5d-55b6-46b0-b633-05390d5879fe)
 
-### 5. load generated placement def and view the placement of standard cell in the core area.
+### 5. Load generated placement def and view the placement of standard cell in the core area.
 
 ### Commands used to load placement def in magic tool
+```
+ Open the directory where the placement def file exists
+ cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/21-09_08-45/results/placement/
 
-#### Open the directory where the placement def file exists
-###### cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/21-09_08-45/results/placement/
-
-#### load the placement def into the magic tool 
-###### magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &
-
+load the placement def into the magic tool 
+magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &
+```
 ### Screenshot of placement def in magic tool
 ![Screenshot 2024-09-21 182704](https://github.com/user-attachments/assets/d37bfc05-68d4-4ad9-9194-2468bfe469c6)
 
 ### Screenshot of Standard cell placement in the core area
 ![Screenshot 2024-09-21 182820](https://github.com/user-attachments/assets/1e4bc3e0-0b04-4c84-8e99-c58dbfc52d41)
 
-# Session 3: Design Library Cell using Magic Layout and ngspice characterization
+# ** DAY-3: Design a Library Cell using Magic Layout and Ngspice Characterization **
 
-# Implimentation
 ## Task 3
 
 ### 1. Clone custom inverter standard cell design from github repository: Standard cell design and characterization using OpenLANE flow
@@ -249,25 +227,25 @@ run_synthesis
 ### 6. Find problem in the DRC section of the old magic tech file for the skywater process and fix them
 
 ### 1. Clone custom inverter standard cell design from github repository: Standard cell design and characterization using OpenLANE flow
+```
+#Change directory to openlane
+cd Desktop/work/tools/openlane_working_dir/openlane
 
-#### Change directory to openlane
-###### cd Desktop/work/tools/openlane_working_dir/openlane
+#Clone the github repository with custom inverter design
+ git clone https://github.com/nickson-jose/vsdstdcelldesign
 
-#### Clone the github repository with custom inverter design
-###### git clone https://github.com/nickson-jose/vsdstdcelldesign
+# Change into the repository direction
+ cd vsdstdcelldesign
 
-#### Change into the repository direction
-###### cd vsdstdcelldesign
+# Copy magic tech file to the repository direction, for the easy access
+ cp sky130A.tech /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/vsdstdcelldesign
 
-#### Copy magic tech file to the repository direction, for the easy access
-###### cp sky130A.tech /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/vsdstdcelldesign
+# Check conents to view the tech file
+ ls -ltr
 
-#### Check conents to view the tech file
-###### ls -ltr
-
-#### Command to open custom inverter layout in magic
-###### magic -T sky130A.tech sky_130_inv.mag &
-
+# Command to open custom inverter layout in magic
+ magic -T sky130A.tech sky_130_inv.mag &
+```
 ### Screenshot of these commands
 ![Screenshot 2024-09-22 151340](https://github.com/user-attachments/assets/33998846-9237-4f75-b493-31384c44f37f)
 
@@ -291,19 +269,19 @@ run_synthesis
 ### 3. Spice extraction of inverter in the magic.
 
 #### Commands for spice extraction of the custom inverter layout in tkcon window of magic
+```
+# Check the current directory
+ pwd
 
-#### Check the current directory
-###### pwd
+# Extraction command to extract to .ext format
+ extract all
 
-#### Extraction command to extract to .ext format
-###### extract all
+#Before converting ext to spice this command enables the parasitic extraction also
+ ext2spice cthresh 0 rthresh 0
 
-#### Before converting ext to spice this command enables the parasitic extraction also
-###### ext2spice cthresh 0 rthresh 0
-
-#### Converting to .ext to .spice
-###### ext2spice
-
+# Converting to .ext to .spice
+ext2spice
+```
 ### Screenshot of tkcon window after running above commands
 ![Screenshot 2024-09-22 215712](https://github.com/user-attachments/assets/0d4fe0ed-ff5f-4b11-9fc4-c80a690a0ddf)
 
@@ -321,13 +299,13 @@ run_synthesis
 ### 5. Post-layout ngspice simulation.
 
 #### Commands for ngspice simulation
+```
+# Command to directly load spice file ngspice sky130_inv.spice
+ngspice sky130_inv.spice
 
-#### Command to directly load spice file ngspice sky130_inv.spice
-###### ngspice sky130_inv.spice
-
-#### Load the plot
-###### plot y vs time a
-
+#Load the plot
+ plot y vs time a
+```
 ### Screenshots of ngspice run
 ![Screenshot 2024-09-22 221835](https://github.com/user-attachments/assets/5cc60ef1-23a2-4fe3-87cd-5407b2da58fc)
 
@@ -390,28 +368,28 @@ run_synthesis
 ###### https://skywater-pdk.readthedocs.io/en/main/rules/periphery.html
 
 ##### Commands to download and view the corrupted skywater process magic tech files and associated files to perform drc corrections
+```
+# change the home directory
+cd
 
-###### change the home directory
-###### cd
+#Command to download the lab files
+wget http://opencircuitdesign.com/open_pdks/archive/drc_tests.tgz
 
-###### Command to download the lab files
-###### wget http://opencircuitdesign.com/open_pdks/archive/drc_tests.tgz
+#Command to extract drc_tests
+ tar xfz drc_tests.tgz
 
-###### Command to extract drc_tests
-###### tar xfz drc_tests.tgz
+# Change directory into the lab folder
+ cd drc_tests
 
-###### Change directory into the lab folder
-###### cd drc_tests
+#List all files and directories present in the current directory
+ ls -al
 
-###### List all files and directories present in the current directory
-###### ls -al
+# Command to view .magicrc file
+ gvim .magicrc
 
-###### Command to view .magicrc file
-###### gvim .magicrc
-
-###### command to open magic tool in better graphics
-###### magic -d XR &
-
+#command to open magic tool in better graphics
+ magic -d XR &
+```
 ###### Screenshot command use
 ![Screenshot 2024-09-23 013324](https://github.com/user-attachments/assets/93015db5-97d7-4f63-9d14-297e534d890e)
 ![Screenshot 2024-09-23 013447](https://github.com/user-attachments/assets/4b64ef78-9cf8-4e05-bf51-7af7e4b1d6c1)
@@ -448,13 +426,13 @@ run_synthesis
 ![Screenshot 2024-09-23 021104](https://github.com/user-attachments/assets/3ac9dcf6-771d-457a-b6bb-86d311311787)
 
 ### Commands to run in tkcon window
+```
+# Loading updated tech file
+ tech load sky130.tech
 
-#### Loading updated tech file
-###### tech load sky130.tech
-
-#### Re-Run DRC 
-###### drc check
-
+#Re-Run DRC 
+ drc check
+```
 #### selecting region displaying the new erros and getting the error message
 ###### drc why
 ![Screenshot 2024-09-23 015800](https://github.com/user-attachments/assets/60c1b9d7-5e23-4556-955c-52e3fea9b04b)
@@ -465,9 +443,7 @@ run_synthesis
 ![Screenshot 2024-09-23 022844](https://github.com/user-attachments/assets/dff4ee95-58b9-4326-b78c-5c33f71ea2ae)
 
 
-# Section 4: Pre-layout timing analysis and importance of good clock tree
-
-## Implementation
+# DAY-4: Pre-layout Timing Analysis and Importance of Good Clock Tree
 
 ## Task: 4
 ### 1. Fix up small DRC errors and verify the design is ready to be inserted into our flow
@@ -1100,16 +1076,14 @@ run_synthesis
 
 ![Screenshot 2024-09-27 005643](https://github.com/user-attachments/assets/b00cec88-340e-4ada-9adf-cb3d6c7fe938)
 
-# Session 5: Final steps for RTL2GDS using tritonRoute and openSTA 
+# DAY-5: Final Steps for RTL2GDS using TritonRoute and OpenSTA
 
-## Implementation
+## Task 5:
 
-### Task 5:
-
-#### 1. Perform generation of Power Distribution Network (PDN) and explore the PDN layout.
-#### 2. Perfrom detailed routing using TritonRoute.
-#### 3. Post-Route parasitic extraction using SPEF extractor.
-#### 4. Post-Route OpenSTA timing analysis with the extracted parasitics of the route.
+### 1. Perform generation of Power Distribution Network (PDN) and explore the PDN layout.
+### 2. Perfrom detailed routing using TritonRoute.
+### 3. Post-Route parasitic extraction using SPEF extractor.
+### 4. Post-Route OpenSTA timing analysis with the extracted parasitics of the route.
 
 ### 1. Perform generation of Power Distribution Network (PDN) and explore the PDN layout.
 
